@@ -1,0 +1,145 @@
+:root {
+	--pink-1: #F1D0D7;
+	--pink-2: #F6828C;
+	--white: #FFFFFF;
+	--muted: #6c6c6c;
+	--radius: 12px;
+	--card-shadow: 0 8px 24px rgba(16,24,40,0.06);
+}
+
+/* Global base */
+html, body, #root {
+	height: 100%;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background: var(--white);
+	color: #111827;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Navbar */
+.navbar {
+	background: var(--white) !important;
+	border-bottom: 1px solid rgba(16,24,40,0.04);
+}
+.navbar-brand {
+	color: var(--pink-2) !important;
+	font-weight: 700;
+	letter-spacing: 1px;
+}
+
+/* Cards */
+.card {
+	border: none;
+	border-radius: var(--radius);
+	box-shadow: var(--card-shadow);
+	transition: transform 180ms ease, box-shadow 180ms ease;
+	overflow: hidden;
+}
+.card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 12px 40px rgba(16,24,40,0.08);
+}
+
+.card .card-img-top, .card img {
+	border-radius: 8px 8px 0 0;
+}
+
+/* Buttons */
+.btn-dark {
+	background: linear-gradient(180deg, var(--pink-2), #e66678) !important;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 6px 18px rgba(246,130,140,0.12);
+}
+.btn-dark:active, .btn-dark:focus {
+	box-shadow: 0 4px 12px rgba(246,130,140,0.16) !important;
+}
+.btn-outline-secondary {
+	border-radius: 10px;
+	border: 1px solid rgba(246,130,140,0.18) !important;
+	color: var(--muted) !important;
+}
+.btn-outline-secondary:hover {
+	border-color: var(--pink-2) !important;
+	color: var(--pink-2) !important;
+}
+
+/* Ensure default button borders aren't black */
+.btn {
+	border-color: transparent !important;
+}
+.btn:focus {
+	box-shadow: 0 6px 18px rgba(246,130,140,0.08) !important;
+}
+
+/* Keep buttons pink on active/focus instead of gray */
+.btn:active,
+.btn:focus,
+.btn:active:focus,
+.btn:focus-visible {
+	background: linear-gradient(180deg, var(--pink-2), #e66678) !important;
+	border-color: var(--pink-2) !important;
+	color: var(--white) !important;
+}
+
+/* Specific for outline buttons when active/focused */
+.btn-outline-secondary:active,
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active:focus {
+	background: rgba(246,130,140,0.06) !important;
+	border-color: var(--pink-2) !important;
+	color: var(--pink-2) !important;
+}
+
+/* Offcanvas & Modal styling */
+.offcanvas, .modal-content {
+	border-radius: 14px;
+	background: var(--white);
+}
+.offcanvas-body .form-control {
+	border-radius: 10px;
+	box-shadow: none;
+}
+.form-control:focus {
+	box-shadow: 0 6px 18px rgba(246,130,140,0.08);
+	border-color: var(--pink-2);
+}
+
+/* Form controls default border lighter and not black */
+.form-control {
+	border: 1px solid rgba(16,24,40,0.06);
+}
+
+/* Badges */
+.badge-dark {
+	background: rgba(0,0,0,0.75) !important;
+	color: var(--white) !important;
+	border-radius: 8px;
+}
+
+/* Carousel */
+.carousel .carousel-item img {
+	border-radius: 12px;
+	max-height: 640px;
+	object-fit: cover;
+}
+
+/* Product Grid tweaks */
+.text-uppercase {
+	letter-spacing: 1px;
+}
+
+/* Footer */
+footer {
+	background: transparent;
+}
+
+/* Utility */
+.shadow-soft {
+	box-shadow: var(--card-shadow) !important;
+}
+
