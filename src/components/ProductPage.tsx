@@ -17,6 +17,13 @@ const ProductPage = () => {
   const productId = Number(id);
   const product = products.find((p) => p.id === productId);
 
+  const formatCurrency = new Intl.NumberFormat('es-NI', {
+    style: 'currency',
+    currency: 'NIO',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
   if (!product) {
     return (
       <Container className="py-5">
@@ -43,7 +50,7 @@ const ProductPage = () => {
         </Col>
         <Col md={6}>
           <h2 className="fw-bold text-uppercase">{product.name}</h2>
-          <p className="h5 text-muted">${product.price.toFixed(2)}</p>
+          <p className="h5 text-muted">{formatCurrency.format(product.price)}</p>
           <p className="text-muted">{product.description}</p>
           <div className="mt-3">
             <Button
@@ -75,7 +82,7 @@ const ProductPage = () => {
               <Card.Img src={p.images[0]} className="rounded-0" style={{ objectFit: 'cover', aspectRatio: '3/4' }} />
               <Card.Body className="px-1 py-3 text-center">
                 <Card.Title className="small mb-1 text-uppercase fw-bold">{p.name}</Card.Title>
-                <Card.Text className="text-muted mb-0">${p.price.toFixed(2)}</Card.Text>
+                <Card.Text className="text-muted mb-0">{formatCurrency.format(p.price)}</Card.Text>
               </Card.Body>
             </Card>
           </Col>

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState, type ReactNode } from 'react';
 
 export type Filters = {
   minPrice?: number | null;
@@ -12,7 +12,7 @@ export type FilterContextValue = {
 
 const FilterContext = createContext<FilterContextValue | null>(null);
 
-export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
+export const FilterProvider = ({ children }: { children: ReactNode }) => {
   const [filters, setFilters] = useState<Filters>({ minPrice: null, maxPrice: null });
   return (
     <FilterContext.Provider value={{ filters, setFilters }}>

@@ -6,7 +6,12 @@ import { FilterProvider } from './contexts/FilterContext';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
       <FilterProvider>
         <div className="min-vh-100 bg-white">
           <CustomNavbar />

@@ -86,6 +86,19 @@ body {
 	color: var(--white) !important;
 }
 
+/* Hamburger button should NOT turn pink when focused/active */
+.hamburger-btn,
+.hamburger-btn:hover,
+.hamburger-btn:active,
+.hamburger-btn:focus,
+.hamburger-btn:active:focus,
+.hamburger-btn:focus-visible {
+	background: transparent !important;
+	border-color: transparent !important;
+	color: #111827 !important;
+	box-shadow: none !important;
+}
+
 /* Specific for outline buttons when active/focused */
 .btn-outline-secondary:active,
 .btn-outline-secondary:focus,
