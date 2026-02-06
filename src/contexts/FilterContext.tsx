@@ -1,30 +1,24 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import { createContext, useContext, useState } from 'react';
 
-type Filters = {
+export type Filters = {
   minPrice?: number | null;
   maxPrice?: number | null;
 };
 
-type FilterContextValue = {
+export type FilterContextValue = {
   filters: Filters;
   setFilters: (f: Filters) => void;
 };
 
-const FilterContext = createContext<FilterContextValue | undefined>(undefined);
+const FilterContext = createContext<FilterContextValue | null>(null);
 
-export const FilterProvider = ({ children }: { children: ReactNode }) => {
+export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
   const [filters, setFilters] = useState<Filters>({ minPrice: null, maxPrice: null });
   return (
     <FilterContext.Provider value={{ filters, setFilters }}>
       {children}
     </FilterContext.Provider>
   );
-};
-
-export const useFilters = () => {
-  const ctx = useContext(FilterContext);
-  if (!ctx) throw new Error('useFilters must be used within FilterProvider');
-  return ctx;
 };
 
 export default FilterContext;
